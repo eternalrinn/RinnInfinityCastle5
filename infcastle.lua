@@ -237,6 +237,3 @@ if game.PlaceId == LobbyPlaceId then
 else 
     SpawnUnit1()
 end
-
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/eternalrinn/RinnInfinityCastle5/main/infcastle.txt'))()

@@ -1,5 +1,5 @@
 local HttpService = game:GetService("HttpService")
-local Webhook = ""
+local Webhook = getgenv().Webhook
 local LobbyPlaceId = 12886143095
 local playerStatsFolder = "PlayerStats"
 

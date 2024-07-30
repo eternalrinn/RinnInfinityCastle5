@@ -17,7 +17,7 @@ local function WebhookUpdate(playerName, playerLevel, emeralds, gold, rerolls, a
         Body = HttpService:JSONEncode({
             ["content"] = "",
             ["embeds"] = {{
-                ["title"] = "ETERNAL SERVICES", 
+                ["title"] = "Eternal Services | Anime Last Stand", 
                 ["description"] = "**User:** ||" .. playerName .. "||\n**Level:** " .. playerLevel,
                 ["type"] = "rich",
                 ["color"] = tonumber("fee82e", 16),

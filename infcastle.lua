@@ -52,12 +52,10 @@ local function savePlayerStats(playerName, playerLevel, emeralds, gold, rerolls,
     local jsonData = HttpService:JSONEncode(playerStats)
     local playerStatsFile = getPlayerStatsFile(playerName)
 
-    -- Create the folder if it doesn't exist
     if not isfolder(playerStatsFolder) then
         makefolder(playerStatsFolder)
     end
 
-    -- Save player stats to a JSON file
     writefile(playerStatsFile, jsonData)
 end
 
@@ -93,10 +91,8 @@ local function UpdatePlayerStats()
     local als_jewels = player.Jewels.Value
     local rewards = ""
 
-    -- Save player stats
+
     savePlayerStats(playerName, playerLevel, emeralds, gold, rerolls, als_jewels, rewards)
-    
-    -- Send webhook update
     WebhookUpdate(playerName, playerLevel, emeralds, gold, rerolls, als_jewels, rewards)
 end
 
@@ -133,14 +129,11 @@ local function UpdateInGameStats()
     -- Retrieve player stats from the JSON file and update
     local playerStats = loadPlayerStats(playerName)
 
-    -- Increment rerolls and reset rewards
     local rerolls = playerStats.rerolls + 1
     local rewards = "+1 Reroll"
 
-    -- Save updated player stats
     savePlayerStats(playerName, playerStats.playerLevel, playerStats.emeralds, playerStats.gold, rerolls, playerStats.als_jewels, rewards)
     
-    -- Send webhook update
     WebhookUpdate(playerName, playerStats.playerLevel, playerStats.emeralds, playerStats.gold, rerolls, playerStats.als_jewels, rewards)
 end
 

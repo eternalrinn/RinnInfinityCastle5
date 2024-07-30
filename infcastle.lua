@@ -101,26 +101,29 @@ local function UpdatePlayerStats()
 end
 
 local function JoinINFCastle()
-    local player = game.Players.LocalPlayer
-    local character = player.Character or player.CharacterAdded:Wait()
-    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+    while game.PlaceId == 12886143095 do
+        wait(2)
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+        
+        local position = Vector3.new(28.3693733, 2.72691631, -40.4032669)
+        local lookVector = Vector3.new(-0.766061664, 0, 0.642767608)
+        local upVector = Vector3.new(0, 1, 0)
+        local rightVector = lookVector:Cross(upVector)
+        
+        local InfinityCastleManager = CFrame.fromMatrix(position, rightVector, upVector)
+        
+        humanoidRootPart.CFrame = InfinityCastleManager
     
-    local position = Vector3.new(28.3693733, 2.72691631, -40.4032669)
-    local lookVector = Vector3.new(-0.766061664, 0, 0.642767608)
-    local upVector = Vector3.new(0, 1, 0)
-    local rightVector = lookVector:Cross(upVector)
-    
-    local InfinityCastleManager = CFrame.fromMatrix(position, rightVector, upVector)
-    
-    humanoidRootPart.CFrame = InfinityCastleManager
-    
-    wait(2)
-    local args = {
-        [1] = "Play",
-        [2] = 5
-    }
-    
-    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("InfiniteCastleManager"):FireServer(unpack(args))
+        local args = {
+            [1] = "Play",
+            [2] = 5
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("InfiniteCastleManager"):FireServer(unpack(args))
+    end
+
 end
 
 local function UpdateInGameStats()

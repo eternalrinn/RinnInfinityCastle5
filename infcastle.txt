@@ -1,5 +1,5 @@
 local HttpService = game:GetService("HttpService")
-local Webhook = ""
+local Webhook
 local LobbyPlaceId = 12886143095
 local playerStatsFolder = "PlayerStats"
 
@@ -238,5 +238,5 @@ else
     SpawnUnit1()
 end
 
-getgenv().Webhook = "https://discord.com/api/webhooks/1136916247896916078/AYALeSvk78WZ7WQLQDEWBo0qhd8GI4bP8VnQA-Vu3y5RIKOKKU0TS29pr73qORzVh9Cc"
-loadstring(game:HttpGet('https://pastebin.com/raw/xez3RBik'))()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/eternalrinn/RinnInfinityCastle5/main/infcastle.txt'))()

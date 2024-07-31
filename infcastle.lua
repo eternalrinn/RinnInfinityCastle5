@@ -31,7 +31,11 @@ local function WebhookUpdate(playerName, playerLevel, emeralds, gold, rerolls, a
                         ["name"] = "Rewards",
                         ["value"] = rewards,
                         ["inline"] = true
-                    }
+                    },
+                        ["footer"] = {
+                            ["text"] = "Buy Eternal Services Now! \nhttps://discord.gg/sXNeNm75gU",
+                            ["icon_url"] = "https://media.discordapp.net/attachments/1268028183966519432/1268028224730824776/Jewels.png?ex=66aaeecf&is=66a99d4f&hm=4e9289e29287a8ced35727493e776b413672d1050eb879af6106639fbe468794&=&format=webp&quality=lossless"
+                        }
                 }
             }}
         })

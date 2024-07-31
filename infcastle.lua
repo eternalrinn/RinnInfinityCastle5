@@ -70,7 +70,7 @@ local function loadPlayerStats(playerName)
         local playerStats = HttpService:JSONDecode(jsonData)
         return playerStats
     else
-        -- Handle the case where the file doesn't exist
+        
         return {
             playerName = playerName,
             playerLevel = 0,

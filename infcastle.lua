@@ -17,14 +17,14 @@ local function WebhookUpdate(playerName, playerLevel, emeralds, gold, rerolls, a
         Body = HttpService:JSONEncode({
             ["content"] = "",
             ["embeds"] = {{
-                ["title"] = "Eternal Services | Anime Last Stand", 
+                ["title"] = "ETERNAL SERVICES | Anime Last Stand", 
                 ["description"] = "**User:** ||" .. playerName .. "||\n**Level:** " .. playerLevel,
                 ["type"] = "rich",
                 ["color"] = tonumber("fee82e", 16),
                 ["fields"] = {
                     {
                         ["name"] = "Player Stats",
-                        ["value"] = "<:emerald:1222174635538387030> " .. emeralds .. "\n<:gold:1266978912781733982> " .. gold .. "\n<:rr:1249518860135174144>" .. rerolls .. "\n<:jewel:1265957882453561354> " .. als_jewels,
+                        ["value"] = "<:emerald:1222174635538387030> " .. emeralds .. "\n<:gold:1266978912781733982> " .. gold .. "\n<:rerolls:1268184053509521419>" .. rerolls .. "\n<:jewel:1265957882453561354> " .. als_jewels,
                         ["inline"] = true
                     },
                     {
@@ -78,7 +78,7 @@ local function loadPlayerStats(playerName)
             gold = 0,
             rerolls = 1,
             als_jewels = 0,
-            rewards = "+1 Reroll"
+            rewards = "<:rerolls:1268184053509521419> +1 Reroll "
         }
     end
 end
@@ -134,7 +134,7 @@ local function UpdateInGameStats()
     local playerStats = loadPlayerStats(playerName)
 
     local rerolls = playerStats.rerolls + 1
-    local rewards = "+1 Reroll"
+    local rewards = "<:rerolls:1268184053509521419> +1 Reroll"
 
     savePlayerStats(playerName, playerStats.playerLevel, playerStats.emeralds, playerStats.gold, rerolls, playerStats.als_jewels, rewards)
     

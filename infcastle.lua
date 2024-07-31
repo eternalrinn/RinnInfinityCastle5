@@ -87,7 +87,6 @@ local function UpdatePlayerStats()
     local player = game.Players.LocalPlayer
     local playerName = player.DisplayName
 
-    -- Fetch player data from the game
     local playerLevel = player.Level.Value
     local emeralds = player.Emeralds.Value
     local gold = player.Gold.Value
